@@ -1,0 +1,3 @@
+[submodule "Todoist.js"]
+	path = Todoist.js
+	url = https://github.com/OiYouYeahYou/Todoist.js.git
