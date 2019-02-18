@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <script src="./Todoist.js/todoist.js"></script>
+        <script>
+            var td = new Todoist();
+            td.token = "d2a6b6c79716d54f8a08b0a4a6d4f5066b23b5ce";
+            // To get a token go to the Account tab in the Todoist settings
+            td.sync.oncomplete = function( data ){ console.log( data ); };
+            // Function to be called once the API data has been received and processed
+            td.sync();
+            // Call the sync function
+        </script>
+    </head>
+</html>
