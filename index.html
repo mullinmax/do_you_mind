@@ -5,10 +5,25 @@
             var td = new Todoist();
             td.token = "d2a6b6c79716d54f8a08b0a4a6d4f5066b23b5ce";
             // To get a token go to the Account tab in the Todoist settings
-            td.sync.oncomplete = function( data ){ console.log( data ); };
+            td.sync.oncomplete = function( data ){ 
+                for (item in data.items){
+                    console.log(item)
+                    create_task(data.items[item])
+                }
+                // document.getElementById("tasks").innerText = JSON.stringify(data.items)
+                console.log(data) 
+            };
             // Function to be called once the API data has been received and processed
             td.sync();
             // Call the sync function
+            function create_task(task){
+                document.getElementById('tasks').innerText += JSON.stringify(task)
+            }
         </script>
     </head>
+    <body>
+        <div id="tasks">
+
+        </div>
+    </body>
 </html>
